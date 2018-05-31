@@ -92,7 +92,7 @@ declare -A icons=(
 [jl]=
 )
 
-function append_file_icon() {
+function iconful_file() {
     while read -r file; do
         ext="${file##*.}"
         icon=${icons[$ext]:-}
@@ -100,13 +100,13 @@ function append_file_icon() {
     done
 }
 
-function append_dir_icon() {
+function iconful_dir() {
     while read -r file; do
         echo " $file"
     done
 }
 
-function append_icon() {
+function iconful() {
     while read -r file; do
         if [[ -d "$file" ]]; then
             icon=''
@@ -131,9 +131,9 @@ while true; do
 done
 
 if [[ "$FILE" == "true" ]]; then
-    append_file_icon
+    iconful_file
 elif [[ "$DIR" == "true" ]]; then
-    append_dir_icon
+    iconful_dir
 else
-    append_icon
+    iconful
 fi
