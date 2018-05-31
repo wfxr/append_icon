@@ -96,13 +96,13 @@ function iconful_file() {
     while read -r file; do
         ext="${file##*.}"
         icon=${icons[$ext]:-}
-        echo "$icon $file"
+        echo " $icon $file"
     done
 }
 
 function iconful_dir() {
     while read -r file; do
-        echo " $file"
+        echo "  $file"
     done
 }
 
@@ -112,9 +112,9 @@ function iconful() {
             icon=''
         else
             ext="${file##*.}"
-            icon=${icons[$ext]:-}
+            icon=${icons[$ext]:-}
         fi
-        echo "$icon $file"
+        echo " $icon $file"
     done
 }
 
