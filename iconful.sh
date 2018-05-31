@@ -8,7 +8,7 @@
 # From: https://github.com/ryanoasis/devicons-shell/blob/master/devicons-ls
 # Author: Ryan L McIntyre
 declare -A icons=(
-[txt]=e
+[txt]=
 [styl]=
 [scss]=
 [htm]=
@@ -95,7 +95,7 @@ declare -A icons=(
 function iconful_file() {
     while read -r file; do
         ext="${file##*.}"
-        icon=${icons[$ext]:-}
+        icon=${icons[$ext]:-}
         echo "$icon $file"
     done
 }
