@@ -5,6 +5,8 @@
 #   Created: 2018-05-31 10:08                                                  #
 ################################################################################
 
+# From: https://github.com/ryanoasis/devicons-shell/blob/master/devicons-ls
+# Author: Ryan L McIntyre
 declare -A icons=(
 [txt]=e
 [styl]=
