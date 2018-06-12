@@ -7,10 +7,13 @@
 
 # From: https://github.com/ryanoasis/devicons-shell/blob/master/devicons-ls
 # Author: Ryan L McIntyre
+folder_icon='\e[1;33m\e[0m'
+file_icon=
 declare -A icons=(
-[txt]=
+[txt]=
 [styl]=
 [scss]=
+[xml]=謹
 [htm]=
 [html]=
 [slim]=
@@ -95,24 +98,24 @@ declare -A icons=(
 function iconful_file() {
     while read -r file; do
         ext="${file##*.}"
-        icon=${icons[$ext]:-}
+        icon=${icons[$ext]:-$file_icon}
         echo " $icon $file"
     done
 }
 
 function iconful_dir() {
     while read -r file; do
-        echo "  $file"
+        echo -e " $folder_icon $file"
     done
 }
 
 function iconful() {
     while read -r file; do
         if [[ -d "$file" ]]; then
-            icon=''
+            icon="$folder_icon"
         else
             ext="${file##*.}"
-            icon=${icons[$ext]:-}
+            icon=${icons[$ext]:-$file_icon}
         fi
         echo " $icon $file"
     done
