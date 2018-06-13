@@ -7,7 +7,7 @@
 
 # From: https://github.com/ryanoasis/devicons-shell/blob/master/devicons-ls
 # Author: Ryan L McIntyre
-folder_icon='\e[1;33m\e[0m'
+folder_icon=''
 file_icon=
 declare -A icons=(
 [txt]=
